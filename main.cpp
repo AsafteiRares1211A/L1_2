@@ -4,6 +4,29 @@
 #include<fstream>
 using namespace std;
 
+
+void ULC(std::fstream &outputFile, std::fstream &inputFile)
+{
+    char c;
+    inputFile>>c;
+    while(!inputFile.eof())
+    {
+        if(isalpha(c))
+        {
+            if(islower(c))
+            {
+                outputFile<<(char)((int)c-32);
+            }
+            else{
+                outputFile<<(char)((int)c+32);
+            }
+
+        } else{
+            outputFile<<c;
+        }
+        inputFile>>c;
+    }
+}
 int main()
 {
     ifstream file("data.txt");
@@ -26,6 +49,8 @@ int main()
     }
 
     cout << sir;
+
+
 
     return 0;
 }
