@@ -15,10 +15,10 @@ void ULC(std::fstream &outputFile, std::fstream &inputFile)
         {
             if(islower(c))
             {
-                outputFile<<(char)((int)c-32);
+                outputFile<<('c' + 'C' -32);
             }
             else{
-                outputFile<<(char)((int)c+32);
+                outputFile<<('c' + 'C' +32);
             }
 
         } else{
